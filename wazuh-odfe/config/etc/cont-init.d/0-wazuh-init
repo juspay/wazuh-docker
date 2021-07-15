@@ -162,7 +162,7 @@ function_custom_aws_ruleset () {
 function_install_cron_jobs() {
   if [[ ! -z "${WAZUH_ENABLE_CRON}" ]];
   then
-    echo "Installing Cron to delete logs older than a day"
+    echo "Installing Crontab" 
     exec_cmd_stdout crontab /app/custom-crons
     exec_cmd_stdout chown 644 /etc/cron.d/*
 }
